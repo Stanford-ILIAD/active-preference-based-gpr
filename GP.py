@@ -13,9 +13,8 @@ class GaussianProcess:
         self.theta = theta #hyperparameter
         self.W = np.zeros((2,2)) #hessian at the queries
         self.noise = noise_level
-        self.initialPoint = np.array([initialPoint])  #initial point that is set to have a 0 value
+        self.initialPoint = np.array(initialPoint)  #initial point that is set to have a 0 value
         self.dim = len(self.initialPoint) #number of features
-
 
     def updateParameters(self,query,answer):
         self.listQueries.append([query[0],query[1],answer])
