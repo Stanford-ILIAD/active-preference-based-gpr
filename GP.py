@@ -46,7 +46,7 @@ class GaussianProcess:
     def meanmode(self): #find the posterior means for the queries
         n = len(self.listQueries)
         Kinv = self.Kinv
-        listResults = np.array(self.listQueries)[:,2]
+        listResults = np.array([q[2] for q in self.listQueries])
         def logposterior(f):
             fodd  = f[1::2]
             feven = f[::2]
